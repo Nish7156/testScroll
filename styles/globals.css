@@ -31,3 +31,8 @@ a {
   margin: -75px 0 0 -75px;
 }
 
+
+#svgPath{
+  transition: storke-dashoffset 5s;
+}
+
