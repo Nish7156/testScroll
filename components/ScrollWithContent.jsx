@@ -10,6 +10,7 @@ function ScrollWithContent() {
     const length = svg.getTotalLength();
     const length1 = svg1.getTotalLength();
     const lengthTest = test1.getTotalLength();
+    console.log(length1, "=", length);
 
     // start positioning of svg drawing
     svg.style.strokeDasharray = length;
@@ -32,14 +33,20 @@ function ScrollWithContent() {
       console.log(draw);
       setfirst(draw);
       // Reverse the drawing when scroll upwards
-      svg.style.strokeDashoffset = length - draw;
-      if (draw >= 2446.98395448023) {
-        test1.style.strokeDashoffset = lengthTest - draw - 1490;
+      // svg.style.strokeDashoffset = length - draw;
+
+      if (draw >= 0 && draw < 2437) {
+        svg.style.strokeDashoffset = length - draw;
+      }
+      else if (draw>=2438 && draw<2922){
+        console.log("*******");
+        test1.style.strokeDashoffset = lengthTest
+      } else if (draw >= 2923 && draw <= 3578) {
+        test1.style.strokeDashoffset = lengthTest - draw - 2390;
+      } else if (draw >= 3578 && draw < 7311) {
         svg1.style.strokeDashoffset = length1 - draw1;
-        if (draw === 3304.9204019351882) {
-          return 0;
-        }
-        return 0;
+      } else {
+        console.log("Return");
       }
     });
   }, []);
@@ -61,12 +68,12 @@ function ScrollWithContent() {
             stroke-width="6"
             stroke-linecap="round"
           />
-          <path
+          {/* <path
             d="M643 602C643 623.376 664.716 628.901 681.111 633C709.173 640.016 753.267 628.72 771.889 604.778C782.005 591.772 782.862 574.183 777.444 559.556C770.918 541.934 760.875 538.24 745 531.556C733.564 526.74 702.74 526.668 699.111 543C697.625 549.687 697 555.367 697 562.444C697 567.376 701.04 586.44 706.111 587.889C713.841 590.097 718.369 592 726.889 592C739.02 592 736.923 590.416 743.444 582.444C745.955 579.376 745.799 571.096 744.889 567C743.222 559.501 736.981 560 731 560"
             stroke="#849AD5"
             stroke-width="6"
             stroke-linecap="round"
-          />
+          /> */}
         </svg>
 
         {first >= 912.07914362237 && (
@@ -93,12 +100,12 @@ function ScrollWithContent() {
             industry.
           </p>
         )}
-        {first >= 2432.453599532717 && (
+        {first >= 3264.974533461792 && (
           <>
-            <div className="absolute text-lg left-[6%] px-10 w-1/2 top-[40%]">
+            <div className="absolute text-lg left-[6%] px-10 w-1/2 top-[37%]">
               <p
                 className={`p-2 ${
-                  first >= 2432.453599532717 && first <= 2632.453599532717
+                  first >= 3264.974533461792 && first <= 3464.974533461792
                     ? "text-gray-300"
                     : "text-black"
                 }`}
@@ -108,7 +115,7 @@ function ScrollWithContent() {
               </p>
               <p
                 className={`p-2 ${
-                  first >= 2432.453599532717 && first <= 2632.453599532717
+                  first >= 3264.974533461792 && first <= 3464.974533461792
                     ? "text-gray-300"
                     : "text-black"
                 }`}
@@ -138,7 +145,6 @@ function ScrollWithContent() {
         </svg>
 
         <svg
-          className=""
           width="599"
           height="927"
           viewBox="0 0 599 927"
