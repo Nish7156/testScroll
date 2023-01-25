@@ -2,10 +2,7 @@ import ScrollDrawing from "../components/ScrollDrawing";
 import Test from "../components/Test";
 import HorizontalScroll from "../components/HorizontalScroll";
 import RoundedScroll from "../components/RoundedScroll";
-import Train from "../components/Train";
 import ScrollWithContent from "../components/ScrollWithContent";
-import Test2 from "../components/Test2";
-import Test3 from "../components/Test3";
 import { useState } from "react";
 export default function Home() {
   const [first, setfirst] = useState(false);
